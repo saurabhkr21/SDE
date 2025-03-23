@@ -1,0 +1,14 @@
+.name{
+    color: teal;
+    padding: 2px;
+    margin: 5px;
+    border: 1px solid black;
+    background-color: lightblue;
+    border-radius: 10px;
+}
+.one{
+    color: red;
+    background-color: green;
+    margin: auto;
+    border-radius: 10px;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        .main{
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            justify-content: center;
+            background-color: aliceblue;
+            border: 2px red solid;
+            align-items: stretch;
+        }
+        .inner{
+            min-width: 40%;
+            border: 1px red solid;
+            height: 100px;
+            background-color: antiquewhite;
+        }
+        /* @media (width>=490px) {
+            .main{
+                flex-direction: row;
+                flex-wrap: wrap;
+                align-items: center;
+                min-width: 400px;
+            }
+            .inner{
+                min-width: 40%;
+                flex-grow: 1;
+            }
+        }
+        @media(width>=980px){
+            .main{
+                flex-wrap: nowrap;
+                justify-content: flex-start;
+            }
+            .inner{
+                min-width: auto;
+                flex-grow: 0;
+                height: 100px;
+                width: 100px;
+            }
+        } */
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="inner"></div>
+        <div class="inner"></div>
+        <div class="inner"></div>
+        <div class="inner"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body bgcolor="lightblue">
+    <h1>Calcify</h1>
+    <form action="" oninput="result.value=eval(parseInt(num1.value)+operator.value +parseInt(num2.value))">
+        <input type="number" id="num1" placeholder="enter first number">
+        <br><br>
+        <select name="operator" id="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select> <br><br>
+        <input type="range" value="0" max="200" id="num2" placeholder="enter second number"><br>=<br><br>
+        <output name="result" id="result" for="num1 num2"></output>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main {
+            width: 150p;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            border: 8px solid red;
+        }
+        .one {
+            width: auto;
+            height: 50%;
+            display: flex;justify-content: space-evenly;
+
+        }
+        .two {
+            width: auto;
+            height: 50%;
+            border: 8px solid red;
+            text-align: center;
+            line-height: 5;
+        }
+        .one >div{
+            height: 100px;
+            width: 360px;
+            border: 8px solid red;text-align: center;
+            line-height: 5;
+
+        }
+    </style>
+</head>
+
+<body>
+<div class="main">
+    <div class="one">
+        <div class="three">A</div>
+        <div class="four">B</div>
+        <div class="five">C</div>
+    </div>
+    <div class="two">D</div>
+</div>
+</body>
+
+</html>

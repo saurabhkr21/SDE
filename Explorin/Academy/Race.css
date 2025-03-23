@@ -1,0 +1,17 @@
+*{
+    background-color: rgb(196, 209, 221);
+}
+
+header{
+    background-color: yellow;
+    text-align: center;
+    width: 100%;
+}
+.line{
+    
+    display: flex;
+    justify-content:space-evenly;
+    align-items:first baseline;
+    padding-top: 0px;
+    margin-top: 0px;
+}

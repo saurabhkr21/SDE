@@ -1,0 +1,581 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* color: white; */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0a2235;
+    padding: 24px 30px;
+    color: white;
+}
+
+.brand-container {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    color: #f2f2f2;
+}
+
+nav ul,
+nav {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+    align-items: center;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.logo-img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.button-cta {
+    background-color: #0d4774;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+    color: #e6dfdf;
+    border-radius: 8px;
+    border: 1px #f36211 solid;
+    padding: 6px 24px;
+}
+
+.intro {
+    display: flex;
+    background-color: #0a2235;
+    padding: 54px 58px;
+}
+
+.intro-content {
+    flex: 1;
+    gap: 20px;
+    color: white;
+}
+
+.intro-title {
+    width: 876;
+    height: 70;
+    top: 184px;
+    left: 101px;
+    Weight: 700;
+    Size: 45px;
+    line-height: 70px;
+}
+
+.intro-subtitle {
+    width: 1150;
+    height: 79;
+    top: 254px;
+    left: 103px;
+
+    font-family: Poppins;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 50px;
+    letter-spacing: 0%;
+
+}
+
+.pro-img {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 50%;
+    height: 220px;
+    top: 184px;
+    left: 1009px;
+    border-radius:50% ;
+}
+
+.intro-description {
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 33px;
+    letter-spacing: 0%;
+}
+main{
+    background: linear-gradient(to right, #fef5e5, #e6e7ff);
+}
+.skills {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 54px 58px;
+    
+}
+
+.skill-header {
+    width: 199px;
+    height: 76px;
+    top: 671px;
+    left: 621px;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 70px;
+    letter-spacing: 0%;
+    text-align: center;
+}
+
+.skill-description {
+    width: 1315px;
+    height: 50px;
+    top: 706px;
+    left: 63px;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 42px;
+    letter-spacing: 0%;
+    text-align: center;
+
+
+}
+
+.skill-container {
+    /* border: 1px solid rgb(22, 11, 227); */
+    gap: 5px;
+    padding: 10px 10px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 180px;
+    top: 843px;
+    left: 83px;
+    border-width: 1px;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 2px 2px 2px 3px rgba(86, 86, 128, 0.2);
+    border-radius: 5px;
+}
+.skill-box-inner > img{
+    width: 20%;
+    border-radius: 5px;
+    padding: 1px 1px;
+}
+.box-logo{
+    width: 20%;
+    height: 20px;
+    border-radius: 5px;
+    padding: 1px 1px;
+}
+.skill-box {
+    display: flex;
+    min-width: 90%;
+    /* align-items: stretch; */
+    height: 46px;
+    top: 883px;
+    left: 133px;
+    width: 1177px;
+    border: 1px #F37021;
+    gap: 5px;
+}
+
+.skill-box-inner {
+    display: flex;
+    min-width: 13.5%;
+    height: 46px;
+    top: 883px;
+    left: 133px;
+    border: 1px #F37021 solid;
+    border-radius: 5px;
+    /* justify-content: space-between; */
+    align-items: center;
+    justify-content: center;
+
+}
+
+.skill-box-2 {
+    display: flex;
+    width: 110%;
+    height: 46px;
+    top: 1033px;
+    left: 540px;
+    border-width: 1px;
+    justify-content: center;
+    gap: 5px;
+}
+
+.progress {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 600px;
+    padding: 20px 20px;
+}
+
+.progress-title {
+    width: 100%;
+    height: 56px;
+    top: 1241px;
+    left: 490px;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 60px;
+    letter-spacing: 0%;
+    text-align: center;
+
+}
+
+.progress-description {
+    width: 1145px;
+    height: 42px;
+    top: 1331px;
+    left: 148px;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 50px;
+    letter-spacing: 0%;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.linkedin-button {
+    width: 250px;
+    height: 50px;
+    top: 1448px;
+    left: 568px;
+    border-radius: 8px;
+    margin: 20px;
+    background-color: #F37021;
+    color: #E0E0E0;
+}
+
+.youtube-sec {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    height: 300px;
+    top: 1570px;
+    left: 84px;
+    border-radius: 15%;
+    padding: 44px 30px;
+    gap: 25px;
+    
+
+}
+
+.module-container {
+    width: 100%;
+    border: 2px solid #FFD700;
+    border-radius: 15px;
+    font-family: sans-serif;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    align-content: stretch;
+    width: 40%;
+    height: 300px;
+    top: 1570px;
+    left: 84px;
+    box-shadow: 2px 2px 2px 3px rgba(86, 86, 128, 0.2);
+}
+
+.video-placeholder {
+    background-color: #E0E0E0;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #888;
+    border-radius: 15px;
+}
+
+.module-content {
+    padding: 15px;
+}
+
+.day {
+    font-size: 0.8em;
+    color: #555;
+
+
+}
+
+.topic {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+
+}
+
+.coach {
+    font-size: 0.9em;
+    color: #555;
+}
+
+.project {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 600px;
+    padding: 20px 20px;
+}
+
+.project-title {
+    width: 461px;
+    height: 56px;
+    top: 2033px;
+    left: 490px;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+
+}
+
+.project-description {
+    width: 1182px;
+    height: 40px;
+    top: 2068px;
+    left: 129px;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    vertical-align: middle;
+
+}
+
+.project-dis-sec {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    height: 300px;
+    top: 1570px;
+    left: 84px;
+    border-radius: 15%;
+    padding: 44px 30px;
+}
+
+.dis {
+    height: 400px;
+    box-shadow: 2px 2px 2px 3px rgba(86, 86, 128, 0.2);
+}
+
+.png {
+    background-image: url(https://s3-alpha-sig.figma.com/img/1bb8/7e58/3db7c9c653e8162fb786de95255e95d3?Expires=1742169600&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=R6VAJXUJj-f2LUi~QfeK4uZTn9zUFYrFMFJv3NdCA0M6ZkGFpiETHmMc7KVkVxa2007JS6NhqXHbxefk7cyOWNrnNSFDyvRNQUtrRWXScog87y-FTAEgB1~EgcETyRcPtsQBcjst3O962cm8kOc0VdSL0Z25XLP0FbgyL2~1P2FHo8CXlleGsgpW0xy2sRIw9DwcmTGSHe~FAjrzMZatenZygUvcfgAcRuy1yvhmCXgFpeKqQ5Zmb0aSELU2eOVya6ysS-qeNBvA35mcDk5QjpIw0yEuUDZ3H5y2KANLpPAv~Ct0rtFyY0gP8WIRvr~kKygofGwJxfGC9TA-1~rGQQ__);
+}
+
+.project-name {
+    color: #F37021;
+    width: 100%;
+    height: 37px;
+    top: 2488px;
+    left: 112.72px;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    padding: 5px 0;
+
+}
+
+.about {
+    width: 100%;
+    height: 36.475921630859375px;
+    top: 2638.22px;
+    left: 112.72px;
+    padding: 25px 1;
+
+}
+
+.brief {
+    width: 100%;
+    height: 140px;
+    top: 2575px;
+    left: 112.72px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+
+}
+
+.education {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.edu-dis-con {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: space-between;
+    width: 95%;
+    height: 350px;
+    top: 3053px;
+    left: 84px;
+    border-width: 1px;
+    
+}
+
+.edu-sec-inner {
+    display: flex;
+    overflow: hidden;
+
+    flex-direction: column;
+    width: 48%;
+    height: 130px;
+    top: 3053px;
+    left: 84px;
+    border-width: 1px;
+    border: 1px solid black;
+    border-radius: 12px;
+    box-shadow: #555;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 15px 20px;
+    box-shadow: 2px 2px 2px 2px rgba(5, 5, 48, 0.2);
+}
+
+.edu-title {
+    width: 20%;
+    height: 56px;
+    top: 2836px;
+    left: 490px;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+
+}
+
+.edu-detail {
+    width: 100%;
+    height: 100px;
+    top: 2892px;
+    left: 129px;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+}
+
+.edu-sec-inner-title {
+    width: 300px;
+    height: 37px;
+    top: 3085px;
+    left: 112px;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 100%;
+    letter-spacing: 0%;
+
+}
+
+.edu-sec-inner-year {
+    width: 180px;
+    height: 37px;
+    top: 3122px;
+    left: 112px;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #F37021;
+}
+
+.edu-sec-inner-course {
+    width: 227px;
+    height: 37px;
+    top: 3162px;
+    left: 112px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 200px;
+    background-color: #0a2235;
+    color: #E0E0E0;
+}
+
+.contact-title {
+    width: 201px;
+    height: 72px;
+    top: 3624px;
+    left: 643px;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #F37021;
+}
+
+.contact-detail {
+    width: 1182px;
+    height: 50px;
+    top: 3668px;
+    left: 153px;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    vertical-align: middle;
+
+}
+.contact-button{
+    width: 100%;
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+top: 3793px;
+left: 357px;
+border-radius: 10px;
+background-color: #0a2235;
+
+}
+.contact-button-inner-1{
+    width: 20%;
+    height: 40px;
+    top: 3793px;
+    left: 357px;
+    border-width: 1px;
+    border-radius: 10px;
+    background-color: #0a2235;
+    color: #E0E0E0;
+    border: 1px solid #F37021;
+}
+.contact-button-inner-2{
+    width: 40%;
+height: 40px;
+top: 3793px;
+left: 540px;
+border-width: 1px;
+border-radius: 10px;
+background-color: #0a2235;
+color: #E0E0E0;
+border: 1px solid #F37021;
+}
