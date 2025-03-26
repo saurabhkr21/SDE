@@ -11,44 +11,41 @@ const passwordError = document.getElementById("passwordError")
 const passwordConfirm = document.getElementById("confirmPassword");
 const passwordConfirmError = document.getElementById("confirmPasswordError");
 
-usernameError.innerText="";
+
 form.addEventListener("submit", (event) => {
     event.preventDefault();
+
     usernameError.textContent = "";
     if (usernameInput.value === "") {
         usernameError.textContent = "Username is required";
-    } else if (usernameInput.value.length == 5) {
+    } else if (usernameInput.value.length < 5) {
         usernameError.textContent = "Username must be at least 5 characters long";
     } else if (usernameInput.value.length > 12) {
         usernameError.textContent = "Username must be at most 12 characters long";
-    } else if ( ["admin", "Saur", "username"].includes(usernameInput.value)) {
+    } else if (["admin" ,"User", "username"].includes(usernameInput.value)) {
         usernameError.textContent = "Username is not allowed";
-    };
-
-
-    let ispasswordValid = validatePassword(passwordInput);
-
-
-    passwordConfirm.textContent = "";
-    if (passwordConfirm.value === "") {
-        passwordConfirm.textContent = "Confirm Password is required";
-    }
-    else if (passwordConfirm.value !== passwordInput.value) {
-        passwordConfirm.textContent = "Passwords do not match";
     }
 
+    EmailInputError.textContent = "";
+    if(!validateEmail(EmailInput.value)){
+        EmailInputError.textContent = "Email is not valid";
+    }
 
-
+    passwordError.textContent = "";
+    if(!validatePassword(passwordInput.value)){
+        passwordError.textContent = "Password is not valid";
+    }
+    
+    let ispasswordValid = validatePassword(passwordInput.value);
 });
 function validateEmail(email) {
     const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0]/gm;
     return regex.test(email);
 }
 function validatePasswordRegex(password) {
-
+    return false;
 }
-
-function validatePassword(password) {
+function validatePassword(Validpassword) {
     let isUpperCaseInclude = false;
     let isLowerCaseInclude = false;
     let hasNumericalCharacter = false;
@@ -62,9 +59,3 @@ function validatePassword(password) {
     }
     return isUpperCaseInclude && isLowerCaseInclude && hasNumericalCharacter;
 }
-
-const api_key = "DL5JWP4PDAB5WS77BZCPXYK8S";
-const api_url = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/$(location)/[date1]/[date2]?key=$(api_key)"
-const location = "London";
-const date1 = "2022-01-01";
-
