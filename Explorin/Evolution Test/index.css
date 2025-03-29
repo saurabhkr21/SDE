@@ -1,0 +1,71 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+nav{
+    background: linear-gradient(90deg, rgb(221, 156, 200), rgb(15, 103, 129));
+    text-align: center;
+}
+nav h1{
+    color: #af0000;
+    font-family: Permanent Marker;
+    margin: 0;
+    padding: 3em;
+}
+.content{
+    background: linear-gradient(90deg, rgb(220, 153, 59), rgb(222, 121, 204));
+    height: 100vh;
+    padding: 1 1;
+}
+
+.search-bar{
+    margin: 0;
+    position: sticky;
+    top: 0;
+    padding: 10px 20px;
+}
+
+.search-p{
+    font-size: 25px;
+}
+
+
+
+input {
+    background-color: #e0f8ff;
+    border: 2px solid #0f6781;
+    border-radius: 10px;
+    font-size: 15px;
+    padding: 5px;
+    text-align: center;
+}
+
+#robotsContainer {
+    margin-top: 1%;
+    justify-content: center;
+    height: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    /* margin: 10px 10px; */
+    gap: 10px;
+    overflow-y: scroll;
+}
+
+.card {
+    width: 350px;
+    height: 500px;
+    background-color: #ff725c;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 5px rgba(0, 0, 0, .2);
+    padding: 10px 10px;
+    
+    margin: auto;
+    }
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+}
