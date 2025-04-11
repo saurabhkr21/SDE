@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Analog Clock</title>
+    <style>
+        body {
+            margin: 0;
+            background: #282c34;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .clock {
+            width: 300px;
+            height: 300px;
+            border: 8px solid #61dafb;
+            border-radius: 50%;
+            position: relative;
+            background: white;
+        }
+
+        .center {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: #282c34;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+        }
+
+        .hand {
+            position: absolute;
+            bottom: 50%;
+            left: 50%;
+            transform-origin: bottom center;
+            transform: translateX(-50%) rotate(0deg);
+            background: #282c34;
+        }
+
+        .hour {
+            width: 8px;
+            height: 70px;
+            background-color: #282c34;
+            z-index: 3;
+        }
+
+        .minute {
+            width: 6px;
+            height: 100px;
+            background-color: #4caf50;
+            z-index: 2;
+        }
+
+        .second {
+            width: 2px;
+            height: 120px;
+            background-color: red;
+            z-index: 1;
+        }
+
+        .number {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1rem;
+            color: #282c34;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Optional: Add hour numbers */
+        .number1 {
+            transform: translate(-50%, -50%) rotate(30deg) translateY(-125px) rotate(-30deg);
+        }
+
+        .number2 {
+            transform: translate(-50%, -50%) rotate(60deg) translateY(-125px) rotate(-60deg);
+        }
+
+        .number3 {
+            transform: translate(-50%, -50%) rotate(90deg) translateY(-125px) rotate(-90deg);
+        }
+
+        .number4 {
+            transform: translate(-50%, -50%) rotate(120deg) translateY(-125px) rotate(-120deg);
+        }
+
+        .number5 {
+            transform: translate(-50%, -50%) rotate(150deg) translateY(-125px) rotate(-150deg);
+        }
+
+        .number6 {
+            transform: translate(-50%, -50%) rotate(180deg) translateY(-125px) rotate(-180deg);
+        }
+
+        .number7 {
+            transform: translate(-50%, -50%) rotate(210deg) translateY(-125px) rotate(-210deg);
+        }
+
+        .number8 {
+            transform: translate(-50%, -50%) rotate(240deg) translateY(-125px) rotate(-240deg);
+        }
+
+        .number9 {
+            transform: translate(-50%, -50%) rotate(270deg) translateY(-125px) rotate(-270deg);
+        }
+
+        .number10 {
+            transform: translate(-50%, -50%) rotate(300deg) translateY(-125px) rotate(-300deg);
+        }
+
+        .number11 {
+            transform: translate(-50%, -50%) rotate(330deg) translateY(-125px) rotate(-330deg);
+        }
+
+        .number12 {
+            transform: translate(-50%, -50%) rotate(0deg) translateY(-125px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="clock">
+        <div class="center"></div>
+        <div class="hand hour" id="hourHand"></div>
+        <div class="hand minute" id="minuteHand"></div>
+        <div class="hand second" id="secondHand"></div>
+
+        <!-- Optional: Clock numbers -->
+        <div class="number number1">1</div>
+        <div class="number number2">2</div>
+        <div class="number number3">3</div>
+        <div class="number number4">4</div>
+        <div class="number number5">5</div>
+        <div class="number number6">6</div>
+        <div class="number number7">7</div>
+        <div class="number number8">8</div>
+        <div class="number number9">9</div>
+        <div class="number number10">10</div>
+        <div class="number number11">11</div>
+        <div class="number number12">12</div>
+    </div>
+
+    <script>
+        const hourHand = document.getElementById('hourHand');
+        const minuteHand = document.getElementById('minuteHand');
+        const secondHand = document.getElementById('secondHand');
+
+        function updateClock() {
+            const now = new Date();
+            const seconds = now.getSeconds();
+            const minutes = now.getMinutes();
+            const hours = now.getHours();
+
+            const secondDeg = seconds * 6;
+            const minuteDeg = minutes * 6 + seconds * 0.1;
+            const hourDeg = (hours % 12) * 30 + minutes * 0.5 + seconds * (0.5 / 60);
+
+            secondHand.style.transform = `translateX(-50%) rotate(${secondDeg}deg)`;
+            minuteHand.style.transform = `translateX(-50%) rotate(${minuteDeg}deg)`;
+            hourHand.style.transform = `translateX(-50%) rotate(${hourDeg}deg)`;
+        }
+
+        setInterval(updateClock, 1000);
+        updateClock(); // initial call
+    </script>
+</body>
+
+</html>
