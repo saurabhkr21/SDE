@@ -1,5 +1,6 @@
 const monsterList = document.getElementById("monster-list");
-const searchInput = document.getElementById("search-1");document.addEventListener("DOMContentLoaded", () => {
+const searchInput = document.getElementById("search-1");
+document.addEventListener("DOMContentLoaded", () => {
     fetch("https://jsonplaceholder.typicode.com/users")
         .then(response => response.json())
         .then(users => {
@@ -19,6 +20,7 @@ function displayRobots(users) {
             <h2>${user.name}</h2>
             <p>${user.email}</p>
             <p>${user.username}</p>
+            <p>${user.address}</p>
         `;
         container.appendChild(card);
     });
@@ -45,6 +47,7 @@ function displayMonsters(filteredMonsters) {
             <h3>${monster.name}</h3>
             <p>${monster.email}</p>
             <p>${monster.username}</p>
+            
         `;
         monsterList.appendChild(monsterDiv);
     });
