@@ -4,7 +4,6 @@ const searchBar = document.getElementById("search-bar");
 const newsArticles = document.getElementById("news-articles");
 
 const categories = [
-    "sports",
     "general",
     "business",
     "entertainment",

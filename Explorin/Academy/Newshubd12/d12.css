@@ -65,9 +65,10 @@ select {
 }
 
 /* .search-bar button[type="submit"] img {
-          cursor: pointer;
-          rotate: 90deg;
-        } */
+    cursor: pointer;
+    rotate: 90deg;
+} */
+
 .search-bar button[type="submit"] {
     min-width: auto;
     background-color: transparent;
