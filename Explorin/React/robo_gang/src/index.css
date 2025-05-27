@@ -1,18 +1,7 @@
 @import "tailwindcss";
-
-/* 
- * Hey Dreamers! 👋
- * This is a clean and optimized CSS file for the RoboFriends user directory.
- * I've organized it into clear sections with comments for better readability.
- * Each section is marked with a comment line for your easy navigation.
- * Feel free to explore and modify as needed!
- * Plus, dont just copy paste this and say done, try to understand the code and make it your own.
- * Also, I've added a few animations and transitions to make the site more interactive, you can skip that part if you want.
- */
-
 /* ~~~~~~~~~~~~~~ CSS Variables ~~~~~~~~~~~~~~ */
 :root {
-    --primary-gradient: linear-gradient(135deg, #6366f1, #4f46e5);
+    --primary-gradient: linear-gradient(90deg, rgb(221, 156, 200), rgb(15, 103, 129));
     --primary-color: #4f46e5;
     --primary-light: #818cf8;
     --primary-dark: #4338ca;
@@ -20,6 +9,7 @@
     --text-dark: #1e293b;
     --bg-light: #f1f5f9;
     --bg-white: #ffffff;
+    --bg-saffron:linear-gradient(90deg, rgb(176, 189, 77), rgb(109, 182, 205));
     --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
     --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
     --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
@@ -30,11 +20,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
 }
 
 .body, .App {
+    
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: var(--bg-light);
+    background:linear-gradient(90deg, rgb(220, 153, 59), rgb(222, 121, 204));
     color: var(--text-dark);
     line-height: 1.6;
 }
@@ -46,7 +38,9 @@
 }
 
 /* ~~~~~~~~~~~~~~ Header Styles ~~~~~~~~~~~~~~ */
+
 .header {
+    border-radius: 9px;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -114,7 +108,7 @@
 .user-card {
     flex: 1 1 300px;
     max-width: 350px;
-    background: var(--bg-white);
+    background: var(--bg-saffron);
     border-radius: 15px;
     overflow: hidden;
     box-shadow: var(--shadow-md);
@@ -131,7 +125,7 @@
     width: 100%;
     height: 200px;
     object-fit: cover;
-    background: var(--bg-light);
+    background: var(--bg-saffron);
 }
 
 .user-info {

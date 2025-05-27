@@ -1,42 +1,71 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+nav{
+    background: linear-gradient(90deg, rgb(221, 156, 200), rgb(15, 103, 129));
+    text-align: center;
+}
+nav h1{
+    color: #af0000;
+    font-family: Permanent Marker;
+    margin: 0;
+    padding: 3em;
+}
+.content{
+    background: linear-gradient(90deg, rgb(220, 153, 59), rgb(222, 121, 204));
+    height: 100vh;
+    padding: 1% 1%;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.search-bar{
+    margin: 0;
+    position: sticky;
+    top: 0;
+    padding: 10px 20px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.search-p{
+    font-size: 25px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+
+
+input {
+    background-color: #e0f8ff;
+    border: 2px solid #0f6781;
+    border-radius: 10px;
+    font-size: 15px;
+    padding: 5px;
+    text-align: center;
+}
+
+#robotsContainer {
+    margin-top: 1%;
+    justify-content: center;
+    height: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    /* margin: 10px 10px; */
+    gap: 10px;
+    overflow-y: scroll;
 }
 
 .card {
-  padding: 2em;
-}
+    width: 350px;
+    height: 500px;
+    background-color: #ff725c;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 5px rgba(0, 0, 0, .2);
+    padding: 10px 10px;
+    
+    margin: auto;
+    }
 
-.read-the-docs {
-  color: #888;
+.card img {
+    width: 100%;
+    border-radius: 10px;
 }
