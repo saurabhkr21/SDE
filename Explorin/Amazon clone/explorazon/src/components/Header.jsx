@@ -3,48 +3,85 @@ import React from 'react'
 
 export default function Header() {
   const divClassName = " hover:border-white border border-transparent";
-  
+
+
+
   return (
-    <div className='w-screen bg-[#131921] flex text-white justify-between items-center  gap-4 px-4 py-2 '>
+    <div className='w-full bg-[#131921] flex text-white justify-between items-center  gap-2 px-4 py-2 '>
       <div>Amazon</div>
 
-
-      <div className={`${divClassName} flex justify-center items-center`}>
-        <img className='w-[30px] h-[30px]' src="https://cdn-icons-png.flaticon.com/512/2838/2838912.png" alt="" />
-        <div className={`${divClassName} flex flex-col justify-center items-center`}>
-          <span>Deliver to Hardwar 247661‌</span>
-          <span>Update Location</span>
-        </div>
-      </div>
-
-      <form className={`${divClassName} flex justify-center items-center gap-2 border-white w-[40%] h-[50px]`}>
-        <select>
-          <option value="">All</option>
-        </select>
-        <input type="text"  className={`flex flex-1 bg-white h-full text-black`} />
-        <button>Search</button>
+      <HeaderBox
+        Image={() => <img width="18px" height="18px" src="https://img.icons8.com/ios/FFFFFF/marker--v1.png" alt="marker--v1" />}
+        subContent="Deliver to Hardwar 247661‌"
+        content="Update Location"
+      />
+      
+      <form className={`flex-1 flex border rounded h-10 overflow-hidden group z-[4] outline-2 group-has-[input:active]:outline-[#FF9900] text-black`}>
+        <select className="bg-[#E6E6E6] px-2 z-[4]  hover:outline-2 hover:outline-[#FF9900] active:outline-2 active:outline-[#FF9900]">
+          <option>All</option>
+          </select>
+        <input type="text" className="flex-1 bg-white inp" placeholder='Search Amazon.in'/>
+        <button className="px-2 bg-[#FEBD69] z-[4] hover:outline-2 hover:outline-[#FF9900] active:outline-2 active:outline-[#FF9900]"
+        >
+          <img
+            className="size-6"
+            src="https://img.icons8.com/ios-filled/100/search.png"
+            alt="search"
+          />
+        </button>
       </form>
 
-      <div className={`${divClassName}`}>🚩En</div>
+      <HeaderBox
+        Image={() => <img width="22" height="16" src="https://img.icons8.com/external-icongeek26-flat-icongeek26/64/external-indian-flag-india-icongeek26-flat-icongeek26.png" alt="external-indian-flag-india-icongeek26-flat-icongeek26"/>}
+        content='En' dropdown={true} />
 
-      <div className={`${divClassName} flex flex-col gap-2`}>
-        <span>Hello,sign in</span>
-        <span>Account & Lists</span>
-      </div>
+      <HeaderBox
+        subContent="Hello, sign in"
+        content="Account & Lists"
+        dropdown={true} />
 
-      <div className={`${divClassName} flex flex-col justify-center items-center gap-2`}>
-        <span>return</span>
-        <span>& Order</span>
-      </div>
 
-      <div className={`${divClassName} flex  justify-center items-center `}>
-        <img className='w-[30px] h-[30px]  ' src="https://cdn-icons-png.flaticon.com/512/1170/1170678.png" alt="" />
-        <span> 0 </span>
-        <span> Cart </span>
-      </div>
+      <HeaderBox subContent="Returns" content="& Orders" />
+
+      <HeaderBox
+      Image={() => <img width="32" height="32" src="https://img.icons8.com/windows/FFFFFF/shopping-cart.png" alt="shopping-cart" />}
+        content="Cart"
+        />
 
     </div>
   )
 }
 
 
+const HeaderBox = ({
+  className = "",
+  Image = null,
+  subContent = "",
+  content = "",
+  dropdown = false,
+  ...rest
+}) => {
+  return (
+    <div
+      {...rest}
+      className={`  hover:border-white border border-transparent px-4 py-1 flex justify-center items-center `}
+    >
+      {Image ? <Image /> : null}
+      <div
+        className={` ${className} flex flex-col justify-center items-start  `}
+      >
+        <span className=" text-xs font-medium leading-4">{subContent}</span>
+        <span className="flex justify-center items-center gap-1 flex-nowrap text-sm font-bold leading-4">
+          {content}
+          {dropdown ? (
+            <img
+              className="w-3 h-3 "
+              src="https://img.icons8.com/FFFFFF/forma-regular-filled/48/sort-down.png"
+              alt="sort-down"
+            />
+          ) : null}
+        </span>
+      </div>
+    </div>
+  );
+};

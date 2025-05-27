@@ -19,12 +19,12 @@ export default function UserSearch({ handleSubmit = () => { } }) {
     return (
         <form
             onSubmit={submitFn}
-            className="w-full flex gap-4 p-4 bg-slate-200 rounded-md shadow-md m-auto"
+            className="w-full flex  sm:flex-row gap-4 p-4 bg-slate-200 rounded-md shadow-md m-auto"
         >
             <input
                 type="search"
                 placeholder="Enter Github Username ..."
-                className="border-gray-400 rounded-md px-4 py-2 border-2 flex-1"
+                className="border-gray-400 w-2.5 rounded-md px-4 py-2 border-2 flex-1"
                 autoFocus
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
@@ -32,7 +32,7 @@ export default function UserSearch({ handleSubmit = () => { } }) {
             <button
                 type="submit"
                 onClick={submitFn}
-                className="bg-green-500 text-white font-semibold px-4 py-2 rounded-md"
+                className="bg-green-500  text-white font-semibold px-4 py-2 rounded-md"
             >
                 Search
             </button>
