@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { NewMemes } from './components/NewMemes';
 
 export default function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -45,7 +46,8 @@ export default function App() {
       <header className='flex flex-col  w-full h-auto bg-slate-900 '>
         <nav className='flex justify-between items-center p-4'>
           <span className='flex items-center'>
-            <h1 className='text-violet-400 text-4xl'>My memes Box</h1>
+            <h1 className='text-violet-400 text-4xl'>
+              My Memes Box</h1>
           </span>
           <span className='flex items-center gap-2'>
             <form className='gap-2 flex items-center'>
@@ -72,8 +74,9 @@ export default function App() {
         </button>
         {memesData.length > 0 ? (
           memesData.map((memes, index) => (
-            <div key={index} className="flex flex-col w-1/2  bg-slate-500 text-white p-4 rounded-xl shadow-lg">
-              <div className='flex justify-between items-center'>
+            <div key={index} className="flex flex-col justify-center items-center w-1/2  bg-slate-500 text-white p-4 rounded-xl shadow-lg">
+              <div className='flex flex-col'>
+                <div className='flex justify-between items-center'>
                 <h3 className="text-2xl font-bold text-pink-400">{memes.title}</h3>
                 <button onClick={() => handleDeleteMeme(index)} className=''>
                   <img width="24" height="24" src="https://img.icons8.com/material-outlined/FFFFFF/filled-trash.png" alt="filled-trash"/></button>
@@ -88,12 +91,13 @@ export default function App() {
               )}
               <p className="text-white">{memes.content}</p>
               <p className="text-sm text-gray-400">Tags: {memes.tags.join(', ')}</p>
-              <button
-                className="mt-2 bg-pink-600 text-white px-4 py-1 rounded-full hover:bg-pink-700"
-                onClick={() => handleLike(index)}
-              >
+              </div>
+              <div
+              className="flex items-center justify-between  mt-1 w-[70px] bg-pink-600 text-white px-2 py-2 rounded-3xl hover:bg-pink-700">
+                <button onClick={() => handleLike(index)} >
                 ❤️({memes.likes})
               </button>
+              </div>
             </div>
           ))
         ) : (
@@ -112,59 +116,3 @@ export default function App() {
   )
 }
 
-export function NewMemes({ handleClose, handleMemeSubmit }) {
-  const [title, setTitle] = useState("");
-  const [content, setContent] = useState("");
-  const [category, setCategory] = useState("Technology");
-  const [tags, setTags] = useState("");
-  const [image, setImage] = useState("");
-
-  const onsubmitClick = () => {
-    const newMemes = {
-      title,
-      content,
-      category,
-      tags: tags.split(',').map(tag => tag.trim()),
-      image,
-      likes: 0
-    };
-    handleMemeSubmit(newMemes);
-    setTitle('');
-    setContent('');
-    setCategory('');
-    setTags('');
-    setImage('');
-  };
-
-  return (
-    <div
-      className='min-w-full min-h-full bg-black bg-opacity-50 fixed top-0 left-0 flex justify-center items-center z-50'
-      
-    >
-      <div
-        onClick={(e) => e.stopPropagation()}
-        className='flex flex-col  border-2 lg:w-[600px] lg:h-[600px]  border-slate-900  rounded-4xl bg-slate-900  justify-center  gap-3 p-8'
-      >
-        <div className='flex justify-between items-center gap-2 '>
-          <h2 className='text-center  text-pink-500 text-3xl'><span>+</span>Create a memes</h2>
-          <img width="25" height="25" src="https://img.icons8.com/material-sharp/FFFFFF/multiply.png" alt="multiply" onClick={handleClose}/>
-        </div>
-        <div className='flex flex-col gap-3 text-xl p-3'>
-          <input value={title} onChange={e => setTitle(e.target.value)} type="text" placeholder='Memes Title' className='text-white p-3 bg-slate-600 rounded-sm' />
-        <textarea value={content} onChange={e => setContent(e.target.value)} placeholder='Memes Content' rows="4" className='text-white p-3 rounded-sm bg-slate-600' />
-        <select value={category} onChange={e => setCategory(e.target.value)} className='text-white rounded-sm p-3 bg-slate-600'>
-          <option value="Technology">Technology</option>
-          <option value="Travel">Travel</option>
-          <option value="Food">Food</option>
-          <option value="Lifestyle">Lifestyle</option>
-        </select>
-        <input value={tags} onChange={e => setTags(e.target.value)} type="text" placeholder='Tags (comma separated)' className='rounded-sm p-3 text-white bg-slate-600' />
-        <input value={image} onChange={e => setImage(e.target.value)} type="url" placeholder='Image URL' className='text-white rounded-sm p-3 bg-slate-600' />
-        <button type='button' className='bg-pink-700 text-white p-3 rounded-sm' onClick={onsubmitClick}>
-          Create Memes
-        </button>
-        </div>
-      </div>
-    </div>
-  );
-}

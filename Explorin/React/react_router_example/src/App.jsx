@@ -1,17 +1,21 @@
 import React from 'react'
-import { Link } from 'react-router'
-// import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router'
 
 export default function App() {
+  const getStyles = ({ isActive }) => {
+        return {
+            color: isActive ? 'red' : ''
+        }
+    }
   return (
     <div>
-      <h1 >Sample data</h1>
-      <Link to="/contect">Contect</Link><br />
-      <Link to="/test">Link</Link><br />
-
-
-      <Link to="dashboard">dashboard</Link><br />
-      
+      <h1>Sample data</h1>
+      <nav>
+        <NavLink to="/home" style={getStyles}>Home</NavLink><br />
+        <NavLink to="/contect" style={getStyles}>Contact</NavLink><br />
+        <NavLink to="/dashboard" style={getStyles}>Dashboard</NavLink><br />
+        <NavLink to="/settings" style={getStyles}>Settings</NavLink><br />
+      </nav>
     </div>
   )
 }

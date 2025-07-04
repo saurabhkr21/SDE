@@ -1,10 +1,13 @@
 import React from 'react'
-import Setting from './Setting'
+import { Link } from 'react-router'
+
 export default function Home() {
   return (
     <div>
         <h1>Home</h1>
-      <Link to="/setting">Setting</Link>
+        <Link to="/settings">Settings</Link><br />
+        <Link to="/contect">Contect</Link><br />
+        <Link to="/dashboard">Dashboard</Link>
     </div>
   )
 }

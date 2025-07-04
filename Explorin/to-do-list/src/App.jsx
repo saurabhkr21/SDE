@@ -35,7 +35,7 @@ export default function App() {
     <div className='App flex flex-col  '>
       <header className="p-4 max-w-full w-full flex items-center relative bg-[#e9e9e9]">
         <img src="https://static-00.iconduck.com/assets.00/todo-icon-2048x2048-m7wp6prw.png" className='w-9 h-9' alt="todo-logo" />
-        <h1 className="w-full max-w-full text-2xl font-semibold text-center absolute left-0">  
+        <h1 className="w-full max-w-full text-2xl font-semibold text-center absolute left-0">
           Todo
         </h1>
       </header>

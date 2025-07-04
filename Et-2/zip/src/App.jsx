@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
 export default function App() {
- 
   const [isOpen, setIsOpen] = useState(false);
   const [blogdata, setblogdata] = useState([]);
 

@@ -12,19 +12,11 @@ const root = document.getElementById("root");
 ReactDOM.createRoot(root).render(
   <BrowserRouter>
     <Routes>
-      <Route index element={<App />} />
-      {/* <Route path="/test" element={<div>This  is a path</div>} />
-      <Route path="/contect" element={<Contect />} >
-      </Route> */}
-
-      <Route path="dashboard" >
-        <Route index element={<Dashboard />} />
-        <Route path="home" element={<Home />} />
-        <Route path="settings" element={<Settings />} />
-        <Route path="socials" element={<p>ocialsd</p>} />
-        <Route path="*" element={<div>Not found</div>} />
-      </Route>
-
+      <Route path="/" element={<App/>}/>
+      <Route path="/home" element={<Home/>}/>
+      <Route path="/contect" element={<Contect/>}/>
+      <Route path="/dashboard" element={<Dashboard/>}/>
+      <Route path="/settings" element={<Settings/>}/>
     </Routes>
   </BrowserRouter>
 );

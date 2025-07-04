@@ -126,7 +126,7 @@ export function NewTodoDialogue({ handleClose, handleSubmit, ...props }) {
         <label htmlFor="titleInput">
           Title
           <input
-          
+
             id="titleInput"
             type="text"
             placeholder="Enter the Title"
@@ -152,8 +152,6 @@ export function NewTodoDialogue({ handleClose, handleSubmit, ...props }) {
             title="CLick to Add a new TODO"
             className=" bg-blue-600 text-white "
             type="submit"
-            // onClick={handleSubmit}
-            // onClick={handleSubmit(123)}
             onClick={(e) => {
               console.log("Submitting ...");
               const title = document.getElementById("titleInput").value;
@@ -172,29 +170,6 @@ export function NewTodoDialogue({ handleClose, handleSubmit, ...props }) {
     </div>
   );
 }
-
-// const val1 = handleSubmit(123)
-// const val2 = () => handleSubmit(123)
-// val2();
-
-// const ofbj = {
-//   onClick: handleSubmit(123),
-// }
-
-// const prop = {
-//   title: "CLick to Add a new TODO",
-//   className: " bg-blue-600 text-white ",
-//   type: "submit",
-//   onClick: () => console.log("Submit Called !"),
-// };
-
-// const {title, className, ...rest} = prop;
-
-// const rest = {
-//   type: "submit",
-//   onClick: () => console.log("Submit Called !"),
-// }
-
 export function Button({ className, children, ...props }) {
   return (
     <button
