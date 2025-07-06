@@ -1,6 +1,7 @@
 export default function about() {
     return (
         <div className="flex flex-col p-2">
+            
             <div className="flex flex-col">
                 <p className="bg-amber-100 rounded-xl p-2">
                     <h2>Core Component of Next.js</h2>

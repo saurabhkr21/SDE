@@ -12,6 +12,7 @@ export default function Home({ searchParams }) {
         }
         imageArr.push(obj)
     }
+
     return (
         <div>
             <form action="/" method="GET">
@@ -20,10 +21,10 @@ export default function Home({ searchParams }) {
                 <button type="submit">Add</button>
             </form>
             {
-                imageArr.map(function (index, value) {
+                imageArr.map(function ( item,index) {
                     return (
-                        <div key={index}>
-                            <ImageLink item={value}/>
+                        <div key={index} className="bg-amber-600 w-[200px]">
+                            <ImageLink item={item} />
                         </div>
                     )
                 })

@@ -1,8 +1,7 @@
 import { notFound } from "next/navigation";
 
-export default async function User({ params, }: {
-    params: { username: string };
-}) {
+export default async function User({ params, }: {params: { username: string };})
+{
     const { username } = params;
     const userExists = username === "Saurabh"; // example check
 
