@@ -16,14 +16,14 @@ export default function Header({categoryFilter, onCategoryChange, searchTerm, on
                 <h1 className="text-3xl  sm:text-3xl  text-center sm:text-left  font-bold ">
                     NewsHub
                 </h1>
-                <div className='flex gap-2'>
-                    <div  className='flex p-1 border rounded'>
+                <div className='flex gap-3'>
+                    <div  className='flex p-1 border w-[150px] sm:w-auto rounded'>
                     <input
                         type="search"
                         value={searchTerm}
                         onChange={(e) => onSearch(e.target.value)}
                         placeholder="Search news..."
-                        className="px-1 focus:outline-none "
+                        className="px-1 focus:outline-none"
 
                     />
                     </div>
