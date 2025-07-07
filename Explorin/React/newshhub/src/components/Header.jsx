@@ -12,25 +12,25 @@ export default function Header({categoryFilter, onCategoryChange, searchTerm, on
     ];
     return (
         <div className='flex sticky top-0 z-50 w-full text-fuchsia-800  p-2'>
-            <div className="flex w-full h-12 p-2 justify-between items-center bg-amber-100 gap-2 rounded shadow-sm shadow-amber-600">
-                <h1 className="text-3xl  font-bold ">
+            <div className="flex flex-col sm:flex-row  w-full h-auto sm:h-12 p-2 justify-between items-center bg-amber-100 gap-2 sm:gap-4 rounded shadow-sm shadow-amber-600">
+                <h1 className="text-3xl  sm:text-3xl  text-center sm:text-left  font-bold ">
                     NewsHub
                 </h1>
-                <div  className='flex p-1 border rounded'>
+                <div className='flex gap-2'>
+                    <div  className='flex p-1 border rounded'>
                     <input
                         type="search"
                         value={searchTerm}
                         onChange={(e) => onSearch(e.target.value)}
                         placeholder="Search news..."
-                        className="px-2 "
+                        className="px-1 focus:outline-none "
 
                     />
-                    <img width="25" height="20" src="https://img.icons8.com/ios-glyphs/ffffff/search--v1.png" alt="search--v1"/>
-                </div>
+                    </div>
                 <select
                     value={categoryFilter}
                     onChange={(e) => onCategoryChange(e.target.value)}
-                    className="px-3 py-1 rounded bg-white "
+                    className="px-2  py-1 rounded bg-white "
                 >
                     {categories.map((category) => (
                         <option
@@ -41,6 +41,7 @@ export default function Header({categoryFilter, onCategoryChange, searchTerm, on
                         </option>
                     ))}
                 </select>
+                </div>
 
             </div>
         </div>
