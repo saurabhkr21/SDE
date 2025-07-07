@@ -55,7 +55,7 @@ export default function App() {
   });
 
   return (
-    <div className='flex flex-col   h-screen gap-4'>
+    <div className='flex flex-col w-full  h-screen gap-4'>
       <Header
         handleOpen={handleOpen}
         selectCategory={selectCategory}
@@ -63,7 +63,7 @@ export default function App() {
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery} />
 
-      <main className='flex flex-col justify-center  gap-4 p-5 h-auto w-screen'>
+      <main className='flex flex-col justify-center  gap-4 p-5 h-auto w-full'>
         <div className='flex flex-start rounded-2xl cursor-pointer gap-2'>
           <img src="https://www.pngall.com/wp-content/uploads/10/Message-Silhouette-PNG-Background.png"
             className='w-7 h-7' alt="Meme Box" />
