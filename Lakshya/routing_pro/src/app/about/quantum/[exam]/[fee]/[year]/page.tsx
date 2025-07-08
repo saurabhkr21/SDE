@@ -1,4 +1,5 @@
-export default function Home({params}:{params:
+export default function Home(
+    {params}:{params:
     {exam:string ,fee:string, year:string}}){
     const {exam ,fee,year}=params;
     return(

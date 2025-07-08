@@ -1,6 +1,9 @@
+
 import Link from "next/link";
 
-export default function detail() {
+export default async  function detail() {
+    await new Promise((e)=>(
+        setTimeout(e,5000)));
     return (
         <div className="flex flex-col bg-slate-600 w-auto h-screen ">
             <div className="flex">

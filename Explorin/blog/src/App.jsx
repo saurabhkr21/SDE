@@ -12,6 +12,7 @@ export default function App() {
   function handleClose() {
     setIsOpen(false);
   }
+  
   const [memesData, setMemesData] = useState(() => {
     const saved = localStorage.getItem("dataMemes-");
     return saved ? JSON.parse(saved) : [];
