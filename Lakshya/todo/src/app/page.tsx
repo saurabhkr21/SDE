@@ -62,7 +62,7 @@ export default function Home() {
                 handleOpen={handleOpen} />
 
             <main className='flex flex-col items-center justify-center w-full h-full max-w-full bg-slate-200'>
-                <div className='w-full  aspect-4/1 flex items-center justify-center '>
+                <div className='w-full  object-cover flex items-center justify-center '>
                     <Crousel />
                 </div>
                 <section className='flex h-screen flex-col  items-center  w-full max-w-full bg-slate-200 gap-[8px] p-3 border-2'>

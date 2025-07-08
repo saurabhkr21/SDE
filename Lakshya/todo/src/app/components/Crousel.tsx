@@ -19,8 +19,8 @@ export default function Crousel() {
     }
 
     return (
-    <div className="relative  h-[300px] w-full max-w-4xl mx-auto overflow-hidden ">
-      <div className="flex transition-transform  duration-500" style={{ transform: `translateX(-${current * 100}%)` }}>
+    <div className="relative  h-[300px] w-full object-cover mx-auto overflow-hidden ">
+      <div className="flex transition-transform object-center duration-500" style={{ transform: `translateX(-${current * 100}%)` }}>
             {
                 Img_Arr.map((src,index)=>(
                     <img key={index} src={src} alt={'slide ${index}'} className="w-full flex-shrink-0 object-contain"/>
