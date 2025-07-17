@@ -20,8 +20,7 @@ export default function page() {
                 <label htmlFor="password">Password</label>
                 <input type="password" name="password" placeholder="password" />
                 <input type="hidden" name="redirect" value="/formvalidation" />
-                <button>
-                    Submit</button>
+                <button>Submit</button>
             </form>
         </div>
     )
