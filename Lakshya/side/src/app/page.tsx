@@ -1,10 +1,16 @@
+//@ts-nocheck
 'use client'
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from "react";
 import router from "next/navigation";
 import Link from 'next/link';
 
-export default function Home() {
+export default async function Home() {
+//   await new Promise((e)=>(
+//     setTimeout(e,5000)
+//   ))
+
+  //}
   const [open, setOpen] = useState(true);
   const [value, setValue] = useState(0);
   const router = useRouter;
