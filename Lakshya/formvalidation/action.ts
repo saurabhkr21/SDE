@@ -3,9 +3,6 @@
 
 import { redirect } from "next/navigation";
 
-
-
-
 const users = [
     { name: "Lakshya", email: "saurabh7221@gmail.com", password: "12345" },
     { name: "Aarav", email: "aarav@gmail.com", password: "pass123" },
@@ -39,15 +36,23 @@ export async function handleSubmit(obj) {
     //     // alert('Invalid credentials');
     //     return { error: 'Invalid credentials' };
     // }
+
     await wait(1000);
+
     const username = obj.name;
     const email = obj.email;
     const password = obj.password;
+    console.log(obj);
+
 
     return{
         success:false,
-        message: 'The user already exists',
+        message: 'The user already exists'
     }
 
 }
 
+export async function handleClick(){
+    console.log("received a request");
+    console.log()
+}
