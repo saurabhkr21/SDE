@@ -14,7 +14,7 @@ export default function Home() {
   const [todos, setTodos] = useState(initialitem);
   const [completedTodo, setCompletedTodo] = useState(compltedTask);
   const [inputValue, setInputValue] = useState();
-  const [isCompleted,setIsCompleted]=useState(false);
+  const [isCompleted, setIsCompleted] = useState(false);
   function handleInputValue(event) {
     setInputValue(event.target.value)
   }
@@ -23,8 +23,8 @@ export default function Home() {
     if (inputValue.length == 0) return;
     let updateTodos = [...todos];
     let obj = {
-      title:inputValue,
-      isCompleted:false
+      title: inputValue,
+      isCompleted: false
     }
     updateTodos.push(obj)
     setTodos(updateTodos);
