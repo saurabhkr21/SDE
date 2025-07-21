@@ -3,6 +3,7 @@
 
 import { Button, DropdownMenu, Switch } from '@radix-ui/themes'
 import Switch1 from './Switch1';
+import SearchBar from './SearchBar';
 
 
 export default function Header() {
@@ -64,6 +65,9 @@ export default function Header() {
                     </DropdownMenu.Content>
                 </DropdownMenu.Root>
 
+                <div>
+                    <SearchBar/>
+                </div>
             </div>
                 <div className='flex'>
                     <Switch1 />

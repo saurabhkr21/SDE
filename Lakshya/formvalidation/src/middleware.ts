@@ -1,21 +1,19 @@
-import { NextResponse } from "next/server";
-import type { NextRequest } from "next/server";
+//@ts-nocheck
 
-export function middleware(request: NextRequest) {
-    const user = request.cookies.get("user")?.value;
+import { cookies } from "next/headers";
+import { NextResponse } from "next/server";
+
+
+export default async function middleware(request) {
+    const cookieStore = await cookies();
+    const user = cookieStore.get("user")?.value;
     const pathname = request.nextUrl.pathname;
 
     const protectedPaths = ['/', '/profile', '/home'];
     if (protectedPaths.includes(pathname)) {
         if (!user) {
-            // Use relative path for redirect
-            const loginUrl = new URL('/login', request.url);
-            return NextResponse.redirect(loginUrl);
+            return NextResponse.redirect("http://localhost:3001/login");
         }
     }
     return NextResponse.next();
 }
-
-export const config = {
-    matcher: ["/", "/profile", "/home"],
-};

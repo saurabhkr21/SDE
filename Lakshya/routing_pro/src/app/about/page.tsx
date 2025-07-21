@@ -1,3 +1,4 @@
+//@ts-nocheck
 export default function about() {
     return (
         <div className="flex flex-col p-2">

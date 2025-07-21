@@ -5,17 +5,16 @@ import { useEffect, useState } from 'react';
 
 export default function AddToCart({ item }) {
     const [inCart, setInCart] = useState(false);
+
     useEffect(() => {
         let prevItems = localStorage.getItem('cart');
         prevItems = prevItems ? JSON.parse(prevItems) : [];
-        const existingItem = prevItems.find(() => {
-            return Element.id == item.id
-        })
+        let existingItem = prevItems.find(cartItem=> cartItem.id === item.id);
         if (existingItem) setInCart(true);
-    }, [])
+    }, [item.id]);
 
     function handleAdd() {
-        let prevItem = localStorage.getItem('cart')
+        let prevItem = localStorage.getItem('cart');
         prevItem = prevItem ? JSON.parse(prevItem) : [];
 
         // Check if item already exists to prevent duplicates
@@ -26,29 +25,26 @@ export default function AddToCart({ item }) {
             setInCart(true);
         }
     }
+
     return (
-        <div className='flex  gap-1'>
+        <div className='flex gap-1'>
             <Link href={"/cart"}>
                 <button
-                        onClick={handleAdd}
-                        disabled={item.stock}
-                        className={`flex-1 py-2 px-4 rounded-md font-medium transition-colors ${item.stock
-                            ? 'bg-blue-600 text-white hover:bg-blue-700'
-                            : 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                            }`}
-                    >
-                        Buy Now
-                    </button>
-                </Link>
+                    onClick={handleAdd}
+                    disabled={!item.stock}
+                    className={`flex-1 py-2 px-4 rounded-md font-medium transition-colors ${item.stock
+                        ? 'bg-blue-600 text-white hover:bg-blue-700'
+                        : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                        }`}
+                >
+                    Buy Now
+                </button>
+            </Link>
             {
                 inCart ?
                     <button
-                        onClick={handleAdd}
-                        disabled={item.stock}
-                        className={`flex-1 py-2 px-4 rounded-md font-medium transition-colors ${item.stock
-                            ? 'bg-blue-600 text-white hover:bg-blue-700'
-                            : 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                            }`}
+                        disabled
+                        className="flex-1 py-2 px-4 rounded-md font-medium bg-gray-300 text-gray-500 cursor-not-allowed"
                     >
                         Added to Cart
                     </button>

@@ -4,8 +4,8 @@ import Router from "next/router";
 import { useEffect, useState } from "react";
 
 const dummyDetails: Record<string, { email: string; age: number; city: string }> = {
-    Saurabh: { email: "saurabh7221@gmail.com", age: 22, city: "Motihari" },
-    Aishwarya: { email: "aishwarya290@gmail.com", age: 22, city: "Motihari" },
+    "Saurabh Kumar": { email: "saurabh7221@gmail.com", age: 22, city: "Motihari" },
+    "Aishwarya Verma": { email: "aishwarya290@gmail.com", age: 22, city: "Motihari" },
     Aarav: { email: "aarav@gmail.com", age: 25, city: "Mumbai" },
     Ishita: { email: "ishita@gmail.com", age: 21, city: "Bangalore" },
     Rohan: { email: "rohan@gmail.com", age: 24, city: "Pune" },

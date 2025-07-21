@@ -8,11 +8,9 @@ type User = {
     password: string;
 };
 
-
-
 const users: User[] = [
-    { name: 'Saurabh', email: 'saurabh7221@gmail.com', password: '12345' },
-    { name: 'Aishwarya', email: 'aishwarya284@gmail.com', password: 'aish123' },
+    { name: 'Saurabh Kumar', email: 'saurabh7221@gmail.com', password: '12345' },
+    { name: 'Aishwarya Verma', email: 'aishwarya284@gmail.com', password: 'aish123' },
     { name: 'Aarav', email: 'aarav@gmail.com', password: 'pass123' },
     { name: 'Ishita', email: 'ishita@gmail.com', password: 'welcome1' },
     { name: 'Rohan', email: 'rohan@gmail.com', password: 'rohan@123' },

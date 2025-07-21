@@ -8,7 +8,6 @@ export default function layout({children,modal}) {
             <Header/>
             {modal}
             {children}
-            
         </div>
     )
 }

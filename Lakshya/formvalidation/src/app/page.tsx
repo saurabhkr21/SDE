@@ -1,5 +1,6 @@
 // 'use client';
 
+import { request } from "http";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 
@@ -85,11 +86,11 @@ import { redirect } from "next/navigation";
 // app/page.js (Next.js App Router) or pages/index.js (Pages Router)
 export default async function Home() {
     const cookieStore = cookies();
-        const user = (await cookieStore).get("user")?.value;
-    
-        if (!user) {
-            redirect("/login");
-        }
+    const user = (await cookieStore).get("user")?.value;
+
+    if (!user) {
+        redirect("/login");
+    }
     return (
         <main className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-100 flex flex-col">
             <nav className="flex items-center justify-between px-8 py-6 bg-white shadow">
