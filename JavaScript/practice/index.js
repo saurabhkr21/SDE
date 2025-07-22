@@ -37,7 +37,25 @@
 //   var d = 20;
 // })();
 
-console.log(typeof (e));
-var e = "hello";
-console.log(f);
-const f = 5;
+// console.log(typeof (e));
+// var e = "hello";
+// console.log(f);
+// const f = 5;
+
+// function createFunctions() {
+//   let result = [];
+//   for (let i = 0; i < 3; i++) {
+//     result.push(() => console.log(i));
+//   }
+//   return result;
+// }
+// const funcs = createFunctions();
+// funcs[0]();
+// funcs[1]();
+// funcs[2]();
+
+async function test() {
+  return "Hello";
+}
+test().then(console.log);
+
