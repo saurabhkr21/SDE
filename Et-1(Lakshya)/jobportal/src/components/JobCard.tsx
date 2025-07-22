@@ -18,7 +18,7 @@ export default function JobCard({ item }) {
             if (isNavigating) {
                 console.log("Navigation already in progress");
                 return;
-            }
+            } 
 
             setIsNavigating(true);
             // console.log("Navigating to job detail for:", item.job_id);

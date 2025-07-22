@@ -39,40 +39,61 @@ export default function Page() {
     }
 
     return (
-        <div className="flex flex-col italic items-center justify-center w-full h-screen">
-            <form className="flex flex-col w-full h-full" onSubmit={handleSubmit}>
-                <h1 className="text-2xl font-bold">Login</h1>
-                <input
-                    type="text"
-                    placeholder="username"
-                    name="name"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                />
-                {error.name && <p className="text-red-500">{error.name}</p>}
-                <input
-                    type="email"
-                    placeholder="enter your email"
-                    name="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                />
-                {error.email && <p className="text-red-500">{error.email}</p>}
-                <input
-                    type="password"
-                    placeholder="password"
-                    name="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                />
-                {error.password && <p className="text-red-500">{error.password}</p>}
-                <button type="submit" className="bg-blue-500 text-white mt-2">
-                    Submit
-                </button>
-                {error.message && (
-                    <p className="text-red-500">{error.message}</p>
-                )}
-            </form>
+        <div className="flex items-center justify-center w-full min-h-screen bg-gray-50">
+            <div className="bg-white shadow-lg rounded-lg p-8 w-full max-w-md">
+                <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
+                    <h1 className="text-3xl font-bold text-center text-blue-600 mb-4">
+                        Login
+                    </h1>
+                    <input
+                        type="text"
+                        placeholder="Username"
+                        name="name"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        className="px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
+                        autoComplete="username"
+                    />
+                    {error.name && (
+                        <p className="text-red-500 text-sm">{error.name}</p>
+                    )}
+                    <input
+                        type="email"
+                        placeholder="Enter your email"
+                        name="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        className="px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
+                        autoComplete="email"
+                    />
+                    {error.email && (
+                        <p className="text-red-500 text-sm">{error.email}</p>
+                    )}
+                    <input
+                        type="password"
+                        placeholder="Password"
+                        name="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        className="px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
+                        autoComplete="current-password"
+                    />
+                    {error.password && (
+                        <p className="text-red-500 text-sm">{error.password}</p>
+                    )}
+                    <button
+                        type="submit"
+                        className="bg-blue-600 hover:bg-blue-700 text-white font-semibold p-2 rounded transition mt-2"
+                    >
+                        Submit
+                    </button>
+                    {error.message && (
+                        <p className="text-red-500 text-center text-sm">
+                            {error.message}
+                        </p>
+                    )}
+                </form>
+            </div>
         </div>
     );
 }
