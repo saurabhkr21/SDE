@@ -9,6 +9,7 @@ import {
   where,
   deleteDoc,
   doc,
+  updateDoc,
 } from "firebase/firestore";
 import app from "./firebase";
 import auth from "./firebaseAuth";
@@ -31,8 +32,13 @@ export async function storeDataInDB(data: any) {
   }
 }
 export async function getAllPosts() {
-  const posts = await getDocs(collection(db, "posts"));
-  return formatPosts(posts);
+  try {
+    const posts = await getDocs(collection(db, "posts"));
+    return formatPosts(posts);
+  } catch (e) {
+    console.error("Error getting posts: ", e);
+    throw e;
+  }
 
   // posts.forEach((doc) => {
   //   postsArr.push({
@@ -46,17 +52,27 @@ export async function getAllPosts() {
 }
 
 export async function getCurrentUserPost() {
-  const q = query(
-    collection(db, "posts"),
-    where("authorId", "==", auth.currentUser?.uid)
-  );
-  const posts = await getDocs(q);
-  return formatPosts(posts);
+  try {
+    const q = query(
+      collection(db, "posts"),
+      where("authorId", "==", auth.currentUser?.uid)
+    );
+    const posts = await getDocs(q);
+    return formatPosts(posts);
+  } catch (e) {
+    console.error("Error getting current user posts: ", e);
+    throw e;
+  }
 }
 
 export async function deletePost(id) {
-  const res = await deleteDoc(doc(db, "posts", id));
-  return res;
+  try {
+    const res = await deleteDoc(doc(db, "posts", id));
+    return res;
+  } catch (e) {
+    console.error("Error deleting post: ", e);
+    throw e;
+  }
 }
 
 function formatPosts(posts) {
@@ -72,8 +88,13 @@ function formatPosts(posts) {
 }
 
 export async function UpdatePost(updatedData, id) {
-  const postRef = doc(db, "posts", id);
-  await updateDoc(postRef, updatedData);
+  try {
+    const postRef = doc(db, "posts", id);
+    await updateDoc(postRef, updatedData);
+  } catch (e) {
+    console.error("Error updating post: ", e);
+    throw e;
+  }
 }
 
 export default db;

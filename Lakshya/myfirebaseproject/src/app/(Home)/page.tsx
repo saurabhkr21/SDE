@@ -6,11 +6,15 @@ import { storeDataInDB } from "@/services/firestoreDb";
 import { onAuthStateChanged, User } from "firebase/auth";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { useOpenContext } from "../contextAPI";
+import EditPost from "@/components/EditPost"
 
 export default function Home() {
   const [user, setUser] = useState<User>();
-  const [open,setIsOpen]=useState(false);
+  const { handleClose ,open } = useOpenContext();
+  console.log("kdbkjfbhk", handleClose);
+
   const router = useRouter();
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
@@ -42,10 +46,12 @@ export default function Home() {
         <div className="flex justify-between gap-10 text-black">
           <Link href="/all-posts">All Posts</Link>
           <Link href="/my-posts">My Post</Link>
-          
+
           {/* <button >Add Post</button> */}
+          {open ? <EditPost /> : null}
+          {/* <EditPost/> */}
         </div>
-        <AddPosts/>
+        <AddPosts />
       </div>
     </main>
   );
