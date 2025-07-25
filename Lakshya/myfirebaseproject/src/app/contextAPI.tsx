@@ -19,10 +19,12 @@ export function ContextAPIProvider({ children }) {
 
   function handleOpen() {
     setIsOpen(true);
+    console.log("called",open)
   }
 
   function handleClose() {
     setIsOpen(false);
+    console.log("close called",open)
   }
 
   return (

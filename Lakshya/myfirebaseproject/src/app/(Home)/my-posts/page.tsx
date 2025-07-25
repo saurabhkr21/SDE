@@ -1,16 +1,20 @@
 //@ts-nocheck
 "use client";
+import { useOpenContext } from "@/app/ContextAPI";
+import EditPost from "@/components/EditPost";
 import { deletePost, getCurrentUserPost } from "@/services/firestoreDb";
 import { useEffect, useState } from "react";
 
+
 export default function Page() {
   const [post, setPost] = useState([]);
-  
+  const { handleOpen, close, open } = useOpenContext();
+  const [editingPostId,setEditingPostId]=useState(null);
   async function handleDelete(item) {
     await deletePost(item.id);
     setPost((prev) => prev.filter((p) => p.id !== item.id));
   }
-  
+
   useEffect(() => {
     async function getPosts() {
       const posts = await getCurrentUserPost();
@@ -33,6 +37,11 @@ export default function Page() {
           >
             Delete
           </button>
+          <button onClick={handleOpen}>Edit</button>
+          {open && editingPostId === item.id && (
+            <EditPost post={item} close={close} />
+          )}
+          
         </div>
       ))}
     </div>

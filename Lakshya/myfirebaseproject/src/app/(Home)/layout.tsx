@@ -4,8 +4,6 @@ import auth from "@/services/firebaseAuth";
 import { onAuthStateChanged } from "firebase/auth";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { ContextAPIProvider } from "../contextAPI";
-
 
 export default function Layout({
   children,
@@ -24,9 +22,5 @@ export default function Layout({
     });
   }, []);
   if (!user) return <div>loading...</div>;
-  return (
-    <contextAPI>
-      {children}
-    </contextAPI>
-  );
+  return <ContextAPI>{children}</ContextAPI>;
 }

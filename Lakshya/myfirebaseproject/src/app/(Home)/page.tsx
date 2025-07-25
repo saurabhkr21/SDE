@@ -1,18 +1,17 @@
 //@ts-nocheck
 "use client";
 import AddPosts from "@/components/AddPosts";
+import EditPost from "@/components/EditPost";
 import auth, { signout } from "@/services/firebaseAuth";
-import { storeDataInDB } from "@/services/firestoreDb";
 import { onAuthStateChanged, User } from "firebase/auth";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useContext, useEffect, useState } from "react";
-import { useOpenContext } from "../contextAPI";
-import EditPost from "@/components/EditPost"
+import { useEffect, useState } from "react";
+import { useOpenContext } from "../ContextAPI";
 
 export default function Home() {
   const [user, setUser] = useState<User>();
-  const { handleClose ,open } = useOpenContext();
+  const { handleClose, open } = useOpenContext();
   console.log("kdbkjfbhk", handleClose);
 
   const router = useRouter();

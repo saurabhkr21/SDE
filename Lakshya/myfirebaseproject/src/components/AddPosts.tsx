@@ -1,10 +1,9 @@
 //@ts-nocheck
 "use client";
 
-import { useOpenContext } from "@/app/contextAPI";
+import { useOpenContext } from "@/app/ContextAPI";
 import { storeDataInDB } from "@/services/firestoreDb";
-import { User } from "firebase/auth";
-import React, { useContext, useState } from "react";
+import { useState } from "react";
 
 export default function AddPosts() {
   const [title, setTitle] = useState("");
@@ -14,18 +13,18 @@ export default function AddPosts() {
   const [success, setSuccess] = useState("");
   const { handleOpen } = useOpenContext();
   // console.log("Hii", handleOpen);
-  
+
   async function handleSubmit(e) {
     e.preventDefault();
     setLoading(true);
     setError("");
     setSuccess("");
-    
+
     const data = {
       title,
-      description
+      description,
     };
-    
+
     try {
       await storeDataInDB(data);
       setSuccess("Post added successfully!");
@@ -50,7 +49,7 @@ export default function AddPosts() {
           {success}
         </div>
       )}
-      
+
       <form
         onSubmit={handleSubmit}
         className="flex flex-col text-black gap-4 w-full"

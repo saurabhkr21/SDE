@@ -180,7 +180,7 @@ const InputForm = ({
 };
 
 // Example usage
-const App = () => {
+const EditPost = () => {
   const [showForm, setShowForm] = useState(true);
   const [submissions, setSubmissions] = useState([]);
 
@@ -258,4 +258,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default EditPost;
