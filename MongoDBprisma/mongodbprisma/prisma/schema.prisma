@@ -14,9 +14,15 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Job{
-  id String @default(auto())
-  title String
-  description  String
+model Job {
+  id          String  @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  description String?
+  category    String
+}
 
+model Post {
+  id      String @id @default(auto()) @map("_id") @db.ObjectId
+  title   String
+  content String
 }
