@@ -54,8 +54,51 @@
 // funcs[1]();
 // funcs[2]();
 
-async function test() {
-  return "Hello";
-}
-test().then(console.log);
+// async function test() {
+//   return "Hello";
+// }
+// test().then(console.log);
 
+
+// function createAccount(initialBalance) {
+//   let balance = initialBalance;
+
+//   return {
+//     deposit(amount) {
+//       balance += amount;
+//       return balance;
+//     },
+//     withdraw(amount) {
+//       if (amount > balance) return "Insufficient funds";
+//       balance -= amount;
+//       return balance;
+//     },
+//     getBalance() {
+//       return balance;
+//     },
+//   };
+// }
+
+// const myAccount = createAccount(1000);
+// console.log("Deposit",myAccount.deposit(500));
+// console.log ( "withdraw",myAccount.withdraw(200));
+// console.log( "getbalance",myAccount.getBalance());
+// console.log(myAccount.balance);
+
+
+
+function runOnce(fn) {
+  let called = false;
+  return function () {
+    if (!called) {
+      called = true;
+      return fn();
+    } else {
+      console.log("Function already called");
+    }
+  };
+}
+
+const init = runOnce(() => console.log("App initialized"));
+init();
+init();
