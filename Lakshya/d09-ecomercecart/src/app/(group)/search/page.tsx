@@ -2,7 +2,9 @@
 
 import Cards from "@/components/cards";
 import ProductCard from "@/components/ProductCard";
+import prismaClient from "@/services/prisma";
 import { error } from "console";
+import { title } from "process";
 export function generateMetadata({ searchParams }) {
     const searchTerm = searchParams.q;
     return {
@@ -14,7 +16,23 @@ export function generateMetadata({ searchParams }) {
 
 export default async function Home({ searchParams }) {
     const query = searchParams.q;
-    let data;
+
+    let data=[]
+
+    // try{
+    //     data=prismaClient.product.findMany({
+    //         where :{
+    //             title:{
+    //                 contains:query,
+    //                 mode:"insensitive"
+    //             }
+    //         }
+    //     })
+    // }catch(err){
+    //     console(err)
+    // }
+
+    // let data;
     try {
         const url = "https://dummyjson.com/products/search?q=" + query;
         const response = await fetch(url);

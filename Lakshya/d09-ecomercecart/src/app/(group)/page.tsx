@@ -2,6 +2,7 @@
 
 import { Suspense } from "react";
 import ProductCard from "../../components/ProductCard";
+import prismaClient from "@/services/prisma";
 
 
 export default async function Home() {
@@ -23,6 +24,7 @@ async function HomePage() {
   const response = await fetch(url);
   const data = await response.json();
   const products = data?.products || [];
+// const products=await prismaClient.product.findMany();
   return (
     <div className="flex flex-wrap items-center justify-center gap-2 p-2">
       {
@@ -32,8 +34,6 @@ async function HomePage() {
             item={item} />
         ))
       }
-      
     </div>
   )
-
 }
