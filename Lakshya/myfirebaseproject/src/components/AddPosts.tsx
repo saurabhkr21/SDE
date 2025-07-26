@@ -1,7 +1,7 @@
 //@ts-nocheck
 "use client";
 
-import { useOpenContext } from "@/app/ContextAPI";
+import { useOpenContext } from "@/ContextAPI";
 import { storeDataInDB } from "@/services/firestoreDb";
 import { useState } from "react";
 

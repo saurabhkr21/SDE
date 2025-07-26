@@ -1,10 +1,10 @@
 //@ts-nocheck
 import React, { useState } from "react";
 import { X, Check } from "lucide-react";
+import { useOpenContext } from "@/ContextAPI";
 
 const InputForm = ({
-  initialTitle = "",
-  initialDescription = "",
+  item,
   onSubmit = () => {},
   onCancel = () => {},
   titlePlaceholder = "Enter title...",
@@ -15,8 +15,8 @@ const InputForm = ({
   maxDescriptionLength = 500,
   required = true,
 }) => {
-  const [title, setTitle] = useState(initialTitle);
-  const [description, setDescription] = useState(initialDescription);
+  const [title, setTitle] = useState(item.title);
+  const [description, setDescription] = useState(item.description);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const isValid = required ? title.trim() && description.trim() : true;
@@ -25,10 +25,13 @@ const InputForm = ({
   const titleOverLimit = titleCharsLeft < 0;
   const descOverLimit = descCharsLeft < 0;
 
+  const {handleClose}=useOpenContext();
+
   const handleSubmit = async () => {
     if (!isValid || titleOverLimit || descOverLimit) return;
 
     setIsSubmitting(true);
+
 
     try {
       await onSubmit({
@@ -39,12 +42,14 @@ const InputForm = ({
       console.error("Submission error:", error);
     } finally {
       setIsSubmitting(false);
+      handleClose();
     }
   };
 
   const handleCancel = () => {
     setTitle(initialTitle);
     setDescription(initialDescription);
+    handleClose();
     onCancel();
   };
 
@@ -58,7 +63,7 @@ const InputForm = ({
   };
 
   return (
-    <div className="bg-white border border-gray-200 rounded-lg shadow-lg max-w-lg mx-auto">
+    <div className="bg-white border border-gray-200 rounded-lg shadow-lg  mx-auto">
       <div className="p-6 space-y-4">
         {/* Title Input */}
         <div className="space-y-2">
@@ -99,7 +104,6 @@ const InputForm = ({
             <p className="text-xs text-red-500">Title exceeds maximum length</p>
           )}
         </div>
-
         {/* Description Input */}
         <div className="space-y-2">
           <label
@@ -180,7 +184,7 @@ const InputForm = ({
 };
 
 // Example usage
-const EditPost = () => {
+const EditPost = ({item}) => {
   const [showForm, setShowForm] = useState(true);
   const [submissions, setSubmissions] = useState([]);
 
@@ -202,26 +206,13 @@ const EditPost = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
-      <div className="max-w-lg mx-auto px-4">
-        <h1 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-          Input Form
-        </h1>
-
-        {!showForm && (
-          <div className="text-center mb-6">
-            <button
-              onClick={() => setShowForm(true)}
-              className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-            >
-              Open Form
-            </button>
-          </div>
-        )}
+    <div className=" bg-gray-50  text-black w-1/3 py-8">
+      <div className="mx-auto  px-4">
 
         {showForm && (
           <InputForm
             onSubmit={handleSubmit}
+            
             onCancel={handleCancel}
             titlePlaceholder="What's the title?"
             descriptionPlaceholder="Tell us more about it..."
@@ -229,30 +220,6 @@ const EditPost = () => {
           />
         )}
 
-        {/* Display Submissions */}
-        {submissions.length > 0 && (
-          <div className="mt-8">
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">
-              Submissions
-            </h2>
-            <div className="space-y-4">
-              {submissions.map((item) => (
-                <div
-                  key={item.id}
-                  className="bg-white p-4 rounded-lg border border-gray-200"
-                >
-                  <h3 className="font-semibold text-gray-900 mb-2">
-                    {item.title}
-                  </h3>
-                  <p className="text-gray-700 mb-2">{item.description}</p>
-                  <p className="text-xs text-gray-500">
-                    Submitted: {item.timestamp.toLocaleString()}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
       </div>
     </div>
   );

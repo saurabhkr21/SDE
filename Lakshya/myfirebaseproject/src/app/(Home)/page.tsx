@@ -7,7 +7,7 @@ import { onAuthStateChanged, User } from "firebase/auth";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { useOpenContext } from "../ContextAPI";
+import { useOpenContext } from "../../ContextAPI";
 
 export default function Home() {
   const [user, setUser] = useState<User>();
