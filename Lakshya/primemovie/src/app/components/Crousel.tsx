@@ -10,7 +10,7 @@ import {
   VolumeX,
 } from "lucide-react";
 import results from "@/app/constraints/data";
-console.log(results);
+// console.log(results);
 
 const CarouselComponent = () => {
   const [currentSlide, setCurrentSlide] = useState(0);

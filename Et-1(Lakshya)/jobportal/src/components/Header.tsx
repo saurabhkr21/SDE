@@ -11,7 +11,7 @@ export default function Header() {
   function handleLogOut() {
     document.cookie =
       "password=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-    if(confirm("Are you sure you want to log out?")) {
+    if (confirm("Are you sure you want to log out?")) {
       router.push("/login");
     }
     console.log("Logged out successfully");
@@ -19,8 +19,12 @@ export default function Header() {
   return (
     <div className="flex  items-center gap-2 p-3 bg-gray-100 sticky top-0 shadow-md z-10">
       <div className="flex w- items-center justify-evenly  gap-1">
-        <select className="border px-2 py-1 rounded-md"
-        onChange={(e)=>(e.target.value ==="logout"? handleLogOut():null)}>
+        <select
+          className="border px-2 py-1 rounded-md"
+          onChange={(e) =>
+            e.target.value === "logout" ? handleLogOut() : null
+          }
+        >
           <option value="Personal">{name}</option>
           <option value="professional">Professional</option>
           <option value="logout">Logout</option>
