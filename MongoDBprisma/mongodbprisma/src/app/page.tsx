@@ -1,5 +1,4 @@
 import prismaClient from "@/services/prisma";
-import { PrismaClient } from "../../generated/prisma";
 
 export default function Home() {
   async function createJob(formData: FormData) {

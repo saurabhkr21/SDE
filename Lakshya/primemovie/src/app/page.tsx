@@ -1,7 +1,6 @@
 import Image from "next/image";
 import CarouselComponent from "./components/Crousel";
 import MovieSection from "./components/MovieCard";
-import  TVshow from "/components/TVshow";
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col items-center  justify-between ">
