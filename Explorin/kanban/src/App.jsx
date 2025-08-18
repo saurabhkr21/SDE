@@ -2,7 +2,7 @@ import { Provider } from "react-redux";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Board from "./components/Board";
 import Layout from "./components/Layout";
-import NotFound from "./components/NOtFound";
+import NotFound from "./components/NotFound";
 import Auth from "./pages/Auth";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
